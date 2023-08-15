@@ -1,0 +1,15 @@
+my Article list is here <br /><br /><br /><br /><br /><br /><br />
+
+{% for a in object_list %}
+
+<form enctype="multipart/form-data">
+  <img src="{{ a.thumbnail }}" />
+  <br /><br /><br />
+  {{a.title}}
+  <br /><br /><br />
+  {{a.description}}<br /><br /><br />
+  <a href="{{a.id}}"> read me more </a><br /><br /><br />
+  {{a.created}}<br />
+</form>
+
+{% endfor %}

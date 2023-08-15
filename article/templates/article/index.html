@@ -1,0 +1,50 @@
+{% extends 'article/base.html' %} {% block content%} {% comment %} {% comment %}
+card text Response Chat Gpt {% endcomment %} {% if question %}
+<h3>question : {{question}}</h3>
+{% endif %}
+<br />
+<div class="card text-center border border-0">
+  <div class="card-header bg-warning text-black">Chat Gpt Response</div>
+  <div class="card-body">
+    <br />
+    <br />
+
+    {% if response %} {{response}} {% endif %}
+
+    <br />
+    <br />
+    <br />
+    <br />
+  </div>
+</div>
+{% comment %} end card text Response Chat Gpt {% endcomment %}
+
+<br />
+
+{% comment %} your qustion overview form {% endcomment %}
+
+<form method="POST" action="{% url 'article:home' %}">
+  {% csrf_token %}
+
+  <div class="mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="ask me "
+      name="question"
+    />
+    <br />
+    <br />
+
+    <button
+      type="submit"
+      class="btn bg-white text-primary"
+      data-bs-toggle="submit"
+      aria-pressed="true"
+      style="float: left; margin-left: 37%; width: 28%"
+    >
+      send
+    </button>
+  </div>
+</form>
+{% comment %} end your qustion overview form {% endcomment %} {% endblock %}
